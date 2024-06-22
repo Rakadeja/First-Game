@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="First Game"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scripts/globals.gd"
+
+[dotnet]
+
+project/assembly_name="First Game"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[gui]
+
+theme/custom="res://ui/default.theme"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=1

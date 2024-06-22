@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" load_steps=2 format=3 uid="uid://cpva7e8ey3uin"]
+
+[ext_resource type="Gradient" uid="uid://cqup8axy6xmux" path="res://ui/gradients/vertical_rainbow_gradient.tres" id="1_c2fbf"]
+
+[resource]
+gradient = ExtResource("1_c2fbf")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)

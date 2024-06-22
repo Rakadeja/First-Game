@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d0f2l867enxwe"]
+
+[ext_resource type="Texture2D" uid="uid://diygu1pbneeke" path="res://assets/sprites/player/Pokemon Yellow - Pikachu Walk Forward.png" id="1_5apq7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fp4a"]
+atlas = ExtResource("1_5apq7")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwkkg"]
+atlas = ExtResource("1_5apq7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ijh7"]
+atlas = ExtResource("1_5apq7")
+region = Rect2(17, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xi88"]
+atlas = ExtResource("1_5apq7")
+region = Rect2(34, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xprh8"]
+atlas = ExtResource("1_5apq7")
+region = Rect2(17, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fp4a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwkkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ijh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xi88")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xprh8")
+}],
+"loop": true,
+"name": &"walk_forward",
+"speed": 5.0
+}]

@@ -1,0 +1,168 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddcc4irsh1uwf"]
+
+[ext_resource type="Theme" uid="uid://dkw73s37r8dme" path="res://ui/default.theme" id="1_k0xjv"]
+[ext_resource type="LabelSettings" uid="uid://bqefmq7de8b2l" path="res://ui/labels/header_label_settings.tres" id="2_r1l80"]
+[ext_resource type="Texture2D" uid="uid://diygu1pbneeke" path="res://assets/sprites/player/Pokemon Yellow - Pikachu Walk Forward.png" id="3_vx00y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_54n7n"]
+
+[node name="InGameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBC_IGUI" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Panel_Left" type="Panel" parent="HBC_IGUI"]
+custom_minimum_size = Vector2(256, 24)
+layout_mode = 2
+
+[node name="VBC_PanelLeft" type="VBoxContainer" parent="HBC_IGUI/Panel_Left"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel_Score" type="Panel" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="MC_Score" type="MarginContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Score"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k0xjv")
+
+[node name="VBC_Score" type="VBoxContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Score/MC_Score"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Label_ScoreTitle" type="Label" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Score/MC_Score/VBC_Score"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Score"
+label_settings = ExtResource("2_r1l80")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Label_ScoreValue" type="Label" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Score/MC_Score/VBC_Score"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 2
+text = "00000000"
+label_settings = ExtResource("2_r1l80")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Panel_Energy" type="Panel" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="MC_Energy" type="MarginContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Energy"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k0xjv")
+
+[node name="VBC_Energy" type="VBoxContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Energy/MC_Energy"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Label_Energy" type="Label" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Energy/MC_Energy/VBC_Energy"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Energy"
+label_settings = ExtResource("2_r1l80")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ProgressBar_Energy" type="ProgressBar" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Energy/MC_Energy/VBC_Energy"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Panel_Lives" type="Panel" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft"]
+custom_minimum_size = Vector2(0, 108)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="MC_Lives" type="MarginContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Lives"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k0xjv")
+
+[node name="VBC_Lives" type="VBoxContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Lives/MC_Lives"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="Label_Lives" type="Label" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Lives/MC_Lives/VBC_Lives"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Lives"
+label_settings = ExtResource("2_r1l80")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HBC_Lives" type="HBoxContainer" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Lives/MC_Lives/VBC_Lives"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+
+[node name="TextureRect_Life1" type="TextureRect" parent="HBC_IGUI/Panel_Left/VBC_PanelLeft/Panel_Lives/MC_Lives/VBC_Lives/HBC_Lives"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_vx00y")
+stretch_mode = 5
+
+[node name="Panel_Empty" type="PanelContainer" parent="HBC_IGUI"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_54n7n")
+
+[node name="Panel_Right" type="Panel" parent="HBC_IGUI"]
+custom_minimum_size = Vector2(256, 24)
+layout_mode = 2
+
+[node name="VBC_PanelRight" type="VBoxContainer" parent="HBC_IGUI/Panel_Right"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

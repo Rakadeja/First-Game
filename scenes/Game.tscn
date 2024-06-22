@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwkw3qn01oyc8"]
+
+[ext_resource type="PackedScene" uid="uid://bxoyhpiqlyj37" path="res://ui/ui.tscn" id="1_unnxu"]
+[ext_resource type="Environment" uid="uid://b4l3bn1u5frcu" path="res://settings/environment.tres" id="2_5seu4"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="2_pyu77"]
+[ext_resource type="CameraAttributesPractical" uid="uid://bpatggs87l2k7" path="res://settings/camera_attributes_practical.tres" id="3_luqoi"]
+[ext_resource type="SpriteFrames" uid="uid://d0f2l867enxwe" path="res://assets/sprites/player/pikachu_sprite_frames.tres" id="4_je8r4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c3gsu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7cbxu"]
+
+[node name="NodeRoot" type="Node"]
+
+[node name="UI" parent="." instance=ExtResource("1_unnxu")]
+visible = false
+
+[node name="GameRoot" type="Node2D" parent="."]
+script = ExtResource("2_pyu77")
+
+[node name="Camera2D" type="Camera2D" parent="GameRoot"]
+unique_name_in_owner = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="GameRoot"]
+environment = ExtResource("2_5seu4")
+camera_attributes = ExtResource("3_luqoi")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="GameRoot"]
+follow_viewport_enabled = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="GameRoot/ParallaxBackground"]
+
+[node name="Player" type="Node2D" parent="GameRoot"]
+unique_name_in_owner = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GameRoot/Player"]
+sprite_frames = ExtResource("4_je8r4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="GameRoot/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot/Player/CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_c3gsu")
+
+[node name="Area2D" type="Area2D" parent="GameRoot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot/Area2D"]
+shape = SubResource("WorldBoundaryShape2D_7cbxu")

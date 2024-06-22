@@ -1,0 +1,303 @@
+[gd_scene load_steps=13 format=3 uid="uid://brawnt1ytfbst"]
+
+[ext_resource type="Theme" uid="uid://dkw73s37r8dme" path="res://ui/default.theme" id="1_yikw8"]
+[ext_resource type="Script" path="res://ui/scripts/title_screen.gd" id="2_1mf78"]
+[ext_resource type="Shader" uid="uid://wjralbycacin" path="res://ui/shaders/mask_texture.tres" id="3_8j1ak"]
+[ext_resource type="LabelSettings" uid="uid://nuu0a0f8ep3m" path="res://ui/labels/title_label_settings.tres" id="3_qvdee"]
+[ext_resource type="LabelSettings" uid="uid://bqefmq7de8b2l" path="res://ui/labels/header_label_settings.tres" id="4_c6v68"]
+[ext_resource type="Texture2D" uid="uid://cit6jbem7j36o" path="res://ui/textures/Border - 512x Mask.png" id="4_s6bdb"]
+[ext_resource type="Shader" uid="uid://c36sj1aylplli" path="res://ui/shaders/cycle_rgb.tres" id="6_f7mq7"]
+[ext_resource type="Texture2D" uid="uid://c1y3xy81t6jfm" path="res://ui/textures/vertical_rainbow_gradient.png" id="7_0p6qg"]
+[ext_resource type="Texture2D" uid="uid://bydsvw56f7bjy" path="res://ui/textures/pikachu.png" id="7_c7ss1"]
+[ext_resource type="Texture2D" uid="uid://bm3w2mp83u0qy" path="res://ui/textures/Border-512x.png" id="8_qqcrt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kb2d"]
+shader = ExtResource("3_8j1ak")
+shader_parameter/Mask_Image = ExtResource("4_s6bdb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bojxh"]
+shader = ExtResource("6_f7mq7")
+shader_parameter/Scroll_Speed = 1.0
+shader_parameter/Input_Texture = ExtResource("7_0p6qg")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yikw8")
+script = ExtResource("2_1mf78")
+
+[node name="Panel_TitleScreen" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yikw8")
+
+[node name="MC_TitleScreen" type="MarginContainer" parent="Panel_TitleScreen"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yikw8")
+
+[node name="VBC_TitleScreen" type="VBoxContainer" parent="Panel_TitleScreen/MC_TitleScreen"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme = ExtResource("1_yikw8")
+alignment = 1
+
+[node name="Label_Title" type="Label" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_yikw8")
+text = "First Game"
+label_settings = ExtResource("3_qvdee")
+horizontal_alignment = 1
+
+[node name="Label_LevelSelect" type="Label" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("1_yikw8")
+text = "Level Select"
+label_settings = ExtResource("4_c6v68")
+horizontal_alignment = 1
+
+[node name="MC_TitleImage" type="MarginContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_yikw8")
+
+[node name="pikachu" type="TextureRect" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/MC_TitleImage"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2kb2d")
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme = ExtResource("1_yikw8")
+texture = ExtResource("7_c7ss1")
+expand_mode = 2
+
+[node name="TR_TitleImage" type="TextureRect" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/MC_TitleImage"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_bojxh")
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_yikw8")
+texture = ExtResource("8_qqcrt")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Panel_TSButtonsMain" type="Panel" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(768, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = ExtResource("1_yikw8")
+
+[node name="MC_TSButtons" type="MarginContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsMain"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yikw8")
+
+[node name="HB_TSButtons" type="HBoxContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsMain/MC_TSButtons"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_yikw8")
+alignment = 1
+
+[node name="Btn_Play" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsMain/MC_TSButtons/HB_TSButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Play"
+
+[node name="Btn_Options" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsMain/MC_TSButtons/HB_TSButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Options"
+
+[node name="Btn_Quit" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsMain/MC_TSButtons/HB_TSButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Quit"
+
+[node name="GC_LevelSelect" type="GridContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_yikw8")
+columns = 6
+
+[node name="Button_Level1" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "1"
+
+[node name="Button_Level2" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "2"
+
+[node name="Button_Level3" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "3"
+
+[node name="Button_Level4" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "4"
+
+[node name="Button_Level5" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "5"
+
+[node name="Button_Level6" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "6"
+
+[node name="Button_Level7" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "7"
+
+[node name="Button_Level8" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "8"
+
+[node name="Button_Level9" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "9"
+
+[node name="Button_Level10" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "10"
+
+[node name="Button_Level11" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "11"
+
+[node name="Button_Level12" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/GC_LevelSelect"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+theme = ExtResource("1_yikw8")
+text = "12"
+
+[node name="Panel_TSButtonsLevelSelect" type="Panel" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(768, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_yikw8")
+
+[node name="MC_TSButtonsLevelSelect" type="MarginContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsLevelSelect"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yikw8")
+
+[node name="HB_TSButtonsLevelSelect" type="HBoxContainer" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsLevelSelect/MC_TSButtonsLevelSelect"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("1_yikw8")
+alignment = 1
+
+[node name="Btn_Back" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsLevelSelect/MC_TSButtonsLevelSelect/HB_TSButtonsLevelSelect"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Back"
+
+[node name="Btn_Options" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsLevelSelect/MC_TSButtonsLevelSelect/HB_TSButtonsLevelSelect"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Options"
+
+[node name="Btn_Quit" type="Button" parent="Panel_TitleScreen/MC_TitleScreen/VBC_TitleScreen/Panel_TSButtonsLevelSelect/MC_TSButtonsLevelSelect/HB_TSButtonsLevelSelect"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_yikw8")
+text = "Quit"

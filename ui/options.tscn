@@ -1,0 +1,246 @@
+[gd_scene load_steps=5 format=3 uid="uid://gabu6jfv6cfr"]
+
+[ext_resource type="Script" path="res://ui/scripts/options.gd" id="1_xijqg"]
+[ext_resource type="LabelSettings" uid="uid://nuu0a0f8ep3m" path="res://ui/labels/title_label_settings.tres" id="2_kw5rs"]
+[ext_resource type="Theme" uid="uid://dkw73s37r8dme" path="res://ui/default.theme" id="2_qplp4"]
+[ext_resource type="LabelSettings" uid="uid://bqefmq7de8b2l" path="res://ui/labels/header_label_settings.tres" id="4_cjrop"]
+
+[node name="Options" type="Control"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xijqg")
+
+[node name="Panel_Options" type="Panel" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC_Options" type="MarginContainer" parent="Panel_Options"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBC_Options" type="VBoxContainer" parent="Panel_Options/MC_Options"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Label_Options" type="Label" parent="Panel_Options/MC_Options/VBC_Options"]
+layout_mode = 2
+text = "Options"
+label_settings = ExtResource("2_kw5rs")
+horizontal_alignment = 1
+
+[node name="Panel_OptionsSC" type="Panel" parent="Panel_Options/MC_Options/VBC_Options"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_qplp4")
+theme_type_variation = &"OptionsPanel"
+
+[node name="MC_OptionsSC" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SC_Options" type="ScrollContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_qplp4")
+
+[node name="VBC_Options" type="VBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel_Option1" type="Panel" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options"]
+custom_minimum_size = Vector2(64, 86)
+layout_mode = 2
+theme = ExtResource("2_qplp4")
+theme_type_variation = &"OptionsOptionPanel"
+
+[node name="MC_Option1" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB_Option1" type="VBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option1/MC_Option1"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+
+[node name="Label_Option1" type="Label" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option1/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Option 1"
+label_settings = ExtResource("4_cjrop")
+horizontal_alignment = 1
+
+[node name="HS_Option1" type="HSlider" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option1/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Panel_Option2" type="Panel" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options"]
+custom_minimum_size = Vector2(64, 86)
+layout_mode = 2
+theme = ExtResource("2_qplp4")
+theme_type_variation = &"OptionsOptionPanel"
+
+[node name="MC_Option1" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option2"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB_Option1" type="VBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option2/MC_Option1"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+
+[node name="Label_Option1" type="Label" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option2/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Option 1"
+label_settings = ExtResource("4_cjrop")
+horizontal_alignment = 1
+
+[node name="HS_Option1" type="HSlider" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option2/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Panel_Option3" type="Panel" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options"]
+custom_minimum_size = Vector2(64, 86)
+layout_mode = 2
+theme = ExtResource("2_qplp4")
+theme_type_variation = &"OptionsOptionPanel"
+
+[node name="MC_Option1" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option3"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB_Option1" type="VBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option3/MC_Option1"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+
+[node name="Label_Option1" type="Label" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option3/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Option 1"
+label_settings = ExtResource("4_cjrop")
+horizontal_alignment = 1
+
+[node name="HS_Option1" type="HSlider" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option3/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Panel_Option4" type="Panel" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options"]
+custom_minimum_size = Vector2(64, 86)
+layout_mode = 2
+theme = ExtResource("2_qplp4")
+theme_type_variation = &"OptionsOptionPanel"
+
+[node name="MC_Option1" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option4"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VB_Option1" type="VBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option4/MC_Option1"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+
+[node name="Label_Option1" type="Label" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option4/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 10
+text = "Option 1"
+label_settings = ExtResource("4_cjrop")
+horizontal_alignment = 1
+
+[node name="HS_Option1" type="HSlider" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsSC/MC_OptionsSC/SC_Options/VBC_Options/Panel_Option4/MC_Option1/VB_Option1"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Panel_OptionsButtons" type="Panel" parent="Panel_Options/MC_Options/VBC_Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(768, 87.12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_qplp4")
+
+[node name="MC_OptionsButtons" type="MarginContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsButtons"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qplp4")
+
+[node name="HB_OptionsButtons" type="HBoxContainer" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsButtons/MC_OptionsButtons"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_qplp4")
+alignment = 1
+
+[node name="Btn_CloseOptions" type="Button" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsButtons/MC_OptionsButtons/HB_OptionsButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qplp4")
+text = "Close"
+
+[node name="Btn_ResetOptions" type="Button" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsButtons/MC_OptionsButtons/HB_OptionsButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qplp4")
+text = "Defaults"
+
+[node name="Btn_ApplyOptions" type="Button" parent="Panel_Options/MC_Options/VBC_Options/Panel_OptionsButtons/MC_OptionsButtons/HB_OptionsButtons"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_qplp4")
+text = "Apply"

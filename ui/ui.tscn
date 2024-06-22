@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxoyhpiqlyj37"]
+
+[ext_resource type="Theme" uid="uid://dkw73s37r8dme" path="res://ui/default.theme" id="1_e1i0y"]
+[ext_resource type="Script" path="res://ui/scripts/ui.gd" id="2_bglyi"]
+[ext_resource type="PackedScene" uid="uid://423x02e3fd02" path="res://ui/loading_bar.tscn" id="3_3ga1n"]
+[ext_resource type="PackedScene" uid="uid://brawnt1ytfbst" path="res://ui/title_screen.tscn" id="4_ned4l"]
+
+[node name="UI" type="Control"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_e1i0y")
+script = ExtResource("2_bglyi")
+
+[node name="UITimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="LoadingBar" parent="." instance=ExtResource("3_3ga1n")]
+visible = false
+layout_mode = 1
+
+[node name="TitleScreen" parent="." instance=ExtResource("4_ned4l")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
